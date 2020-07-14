@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  
+    
+    Base
+  
+ | MySQL Doc</title>
+
+
+
+<link rel="stylesheet" href="/docs/mysql/book.min.eb401c14b4478b5a50701adb83d6524bd27348ae8fc06adda692969d1a3fdfa5.css">
+
+
+<link rel="icon" href="/docs/mysql/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://jaswine.com/docs/mysql">MySQL Doc</a>
+</h2>
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2f docs\2fmysql\2f docs\2f base\2f base\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><strong>MySQL安装&amp;配置</strong>
+
+<ul>
+<li><a href="#">MySQL安装</a></li>
+<li><a href="#">MySQL配置</a></li>
+</ul></li>
+<li><strong>MySQL基础</strong>
+
+<ul>
+<li><a href="/docs/mysql/docs/base/base/">Masven基础概念</a></li>
+<li><a href="/docs/mysql/docs/base/sub/">继承&amp;聚合</a></li>
+<li><a href="/docs/mysql/docs/base/life/">生命周期和插件</a><br /></li>
+</ul></li>
+<li><strong>MySQL优化</strong>
+
+<ul>
+<li><a href="/docs/mysql/docs/build/jacoco/">JaCoCo单元测试覆盖率</a></li>
+<li><a href="/docs/mysql/docs/build/jmeter/">Jmeter自动化性能测试</a></li>
+<li><a href="/docs/mysql/docs/build/findbug/">Findbug静态代码测试</a></li>
+</ul></li>
+<li><strong>MySQL高级</strong>
+
+<ul>
+<li><a href="#">MySQL事务</a></li>
+</ul></li>
+<li><strong>MySQL运维</strong>
+
+<ul>
+<li><a href="#">MySQL高可用</a></li>
+<li><a href="#">MySQL冷备</a></li>
+<li><a href="#">MySQL热备</a></li>
+<li><a href="#">MySQL灾备</a></li>
+<li><a href="#">MySQL集群的负载均衡</a></li>
+<li><a href="#">MySQL集群的数据同步</a></li>
+</ul></li>
+<li><strong>MySQL存储引擎</strong>
+
+<ul>
+<li><strong>MyISAM</strong></li>
+<li><strong>InnoDB</strong></li>
+<li><strong>Memory</strong></li>
+<li><strong>Archive</strong></li>
+</ul></li>
+</ul>
+
+
+
+
+
+</nav>
+
+
+
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/docs/mysql/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>
+  
+    
+    Base
+  
+</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="maven基础概念">Maven基础概念</h1>
+
+<p>Maven是一个上手很快很简单的工具，因为上手很快，很简单，所以也就意味着他是怎么工作的对我们而言需要去理解一下，很多工作都是maven帮我去完成了，所以我们觉得简单。</p>
+
+<p>学些maven我个人认为一定要牢记两个思想</p>
+
+<ul>
+<li>约定大大于配置</li>
+<li>一切都是文件</li>
+</ul>
+
+<pre><code class="language-plant">Tips:
+- 另一个用到这个思想的是Springboot
+</code></pre>
+
+<h2 id="什么是maven工程">什么是Maven工程</h2>
+
+<p>依据约定大于配置的思想，maven工程很好定义，只要对应如下的目录结构的文件集合就是maven工程</p>
+
+<ul>
+<li>project
+
+<ul>
+<li>src
+
+<ul>
+<li>main
+
+<ul>
+<li>java</li>
+<li>resources</li>
+</ul></li>
+<li>test
+
+<ul>
+<li>java</li>
+<li>resources</li>
+</ul></li>
+</ul></li>
+<li>pom.xml</li>
+</ul></li>
+</ul>
+
+<p>每一个目录的文件夹中放对应的工程文件，然后在maven执行相关命令(其实是插件)的时候就会去对应的目录下找到相关的东西然后执行，这就是因为所有的maven工程都是一样的，什么文件就应该放在什么地方，这是一种约定俗成的东西。</p>
+
+<p><strong>FOR EXAMPLE</strong></p>
+
+<p>maven在执行编译的时候他会去src/main/java/..的文件夹下找到对应的java文件，然后编译成class文件放到target的目录下，没有让你配置源文件的路径在哪里，因为这是约定俗成的，大家都放在那边，所以maven知道去哪里找到那些文件。</p>
+
+<pre><code class="language-plant">Tips:
+- 也可以自己修改配置文件，让maven去别的目录找源代码文件，但是那不常用，不作讨论
+</code></pre>
+</article>
+
+      
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#maven基础概念">Maven基础概念</a>
+<ul>
+<li><a href="#什么是maven工程">什么是Maven工程</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

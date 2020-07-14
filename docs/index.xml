@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on MySQL Doc</title>
+    <link>https://jaswine.com/docs/mysql/docs/</link>
+    <description>Recent content in Docs on MySQL Doc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://jaswine.com/docs/mysql/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/base/base/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/base/base/</guid>
+      <description> Maven基础概念 Maven是一个上手很快很简单的工具，因为上手很快，很简单，所以也就意味着他是怎么工作的对我们而言需要去理解一下，很多工作都是maven帮我去完成了，所以我们觉得简单。
+学些maven我个人认为一定要牢记两个思想
+ 约定大大于配置 一切都是文件  Tips: - 另一个用到这个思想的是Springboot  什么是Maven工程 依据约定大于配置的思想，maven工程很好定义，只要对应如下的目录结构的文件集合就是maven工程
+ project  src  main  java resources  test  java resources   pom.xml   每一个目录的文件夹中放对应的工程文件，然后在maven执行相关命令(其实是插件)的时候就会去对应的目录下找到相关的东西然后执行，这就是因为所有的maven工程都是一样的，什么文件就应该放在什么地方，这是一种约定俗成的东西。
+FOR EXAMPLE
+maven在执行编译的时候他会去src/main/java/..的文件夹下找到对应的java文件，然后编译成class文件放到target的目录下，没有让你配置源文件的路径在哪里，因为这是约定俗成的，大家都放在那边，所以maven知道去哪里找到那些文件。
+Tips: - 也可以自己修改配置文件，让maven去别的目录找源代码文件，但是那不常用，不作讨论  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/base/life/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/base/life/</guid>
+      <description> 生命周期和插件 maven通过一系列的命令完成编译，测试，打包的工作。你可以在完全不进行的配置的情况下完成这些工作，这就是maven的生命周期和插件。
+关系 生命周期和插件在我看来是成双成对的，生命周期更多的是一种理论，或者说是配置，完成一件事你先做啥后做啥，这就是生命周期。插件就是纯干活的了，编译测试打包都是插件去完成的，你好像没有看到插件，那是因为每个maven都自带了一些基本的插件，当你执行命令的时候maven在你项目的配置文件(pom.xml)中没有找到相关插件配置的话，那么就会使用默认的，默认的插件的位置在
+// todo  maven中的一般默认插件如下
+   插件 功能 对应生命周期     maven-clean-plugin 清理上一次编译的文件 clean   maven-resources-plugin 处理资源文件&amp;amp;测试文件 resources，testresources   maven-compiler-plugin 编译源代码¥&amp;amp;测试源代码 compile，testcompile   maven-surefire-plugin 执行测试 test   maven-jar-plugin 将相关编译后的代码和资源文件进行打jar包 jar   maven-install-plugin 将打好的jar(或者别的打包方式)发不到本地的仓库 install   maven-deploy-plugin 发布打好的包到私服上 deploy    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/base/sub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/base/sub/</guid>
+      <description>Maven中的继承和聚合 我们初级使用maven的时候只知道Maven是一个引入第三方依赖的一个工具。对于maven的高级特性可能挺逗没有听说过。网上下载一些源代码的时候，他们写的maven配置我们都看不懂。
+继承 书上的概念难懂，简单的来说，所谓的继承就是一个maven工程中有如下的标签
+&amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${SpringBoot.version}&amp;lt;/version&amp;gt; &amp;lt;/parent&amp;gt;  一个项目继承于另一个项目之后，现在这个项目就会引用到所有的父工程的依赖，这个叫做依赖的传递性。
+大白话
+我是一个maven工程，我使用parent标签依赖了我爸爸，我现在就可以用我爸爸的东西，在Java工程中就是类，比如我爸爸引用了Apache Commons io包，我在我的工程也可以使用这个包中的相关类了。这个就叫做依赖传递。
+我爸爸引用了Apache Commons io，我在我的工程中也使用了Apache Commons io，那这不重复引用了么，如果版本不一样，我这个工程到底使用哪一个版本的依赖啊，maven默认是引用到达引用最短的那个依赖，所以用的是我自己引用的那个版本，但是这样使用会有隐患，版本冲突可能会导致编译，运行时出现异常。所以要测试一下剔除一个版本。
+聚合 聚合啥意思呢，继承是父子关系，聚合就是兄弟关系，师兄弟那肯定有一个大哥啊，这个大哥负责统筹，所以在那个项目中用了下面的标签就是大哥
+&amp;lt;modules&amp;gt; &amp;lt;module&amp;gt;base&amp;lt;/module&amp;gt; &amp;lt;module&amp;gt;core&amp;lt;/module&amp;gt; &amp;lt;module&amp;gt;utils&amp;lt;/module&amp;gt; &amp;lt;/modules&amp;gt;  兄弟之间没有父子之间那么无私，毕竟朋友妻不可欺，兄弟的依赖我当然不能用，但是我可以依赖兄弟啊，不然依赖兄弟的老婆做事，但是我可以找兄弟做事啊。那这帮兄弟在一起有啥用呢？当然有用啊，可以统一管理啊，大哥让你编译大家就直接编译还可以控制版本，以前你还得一个个让他们编译，现在不用了，你找大哥，大哥一声令下，大家统一干活，就像是军队的方阵一样。
+日常使用 在日常使用的时候，你会看到有的项目中一个项目即是老父亲又是大哥，被依赖还管理着子项目，很多人也就是这里分不清，理解好了之后就很好懂了，只要记住一个是爸爸一个是兄弟就好了，再复杂的项目也能理清关系。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/build/findbug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/build/findbug/</guid>
+      <description> 稍后&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/build/jacoco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/build/jacoco/</guid>
+      <description> 使用JaCoCo来统计代码覆盖率  @Version:Maven 3.6 , JaCoCo
+ 1.引入插件 在pom.xml文件中引入JaCoCo的插件
+&amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.2&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;prepare-agent&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;!-- attached to Maven test phase --&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;report&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;test&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;report&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/build/jmeter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/build/jmeter/</guid>
+      <description> 稍后&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/install/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/install/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/install/yum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/install/yum/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

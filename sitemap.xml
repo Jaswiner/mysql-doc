@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/base/base/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/base/life/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/base/sub/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/build/findbug/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/build/jacoco/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/build/jmeter/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/install/docker/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/install/yum/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/docs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jaswine.com/docs/mysql/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
