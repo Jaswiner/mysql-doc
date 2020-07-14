@@ -85,6 +85,24 @@ Tips: - 也可以自己修改配置文件，让maven去别的目录找源代码�
     
     <item>
       <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/index/base/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/index/base/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaswine.com/docs/mysql/docs/index/optimization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaswine.com/docs/mysql/docs/index/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://jaswine.com/docs/mysql/docs/install/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
